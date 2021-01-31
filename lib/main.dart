@@ -3,9 +3,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:souq1/homepage.dart';
 import 'package:souq1/product.dart';
 import 'package:souq1/provider/cartitem.dart';
 import 'package:souq1/Cart.dart';
+import 'homepage.dart';
 
 void main() {
   runApp(MyApp());
@@ -82,7 +84,14 @@ final List<Product> products =[
                   SizedBox(width: 190,),
                   Text('باوربانك',style: TextStyle(color: Colors.white,fontSize: 20,),),
                   SizedBox(width: 15,),
-                  Icon(Icons.arrow_forward,color: Colors.white,),
+                  GestureDetector(
+                      onTap:(){
+                        Navigator.push(context, MaterialPageRoute(
+                            builder: (context)=> homepage(),
+                        )
+                        );
+                      },
+                      child: Icon(Icons.arrow_forward,color: Colors.white,)),
                 ],
               ),
             ),
